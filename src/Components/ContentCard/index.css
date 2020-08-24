@@ -20,8 +20,8 @@
   transition: transform 3s cubic-bezier(0.25, 0.25, 0.45, 0.95);
 }
 .content-container {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   padding: 0 25px;
   display: flex;
   flex-direction: column;
@@ -43,5 +43,6 @@
 .subtitle {
   font-weight: lighter;
   font-size: 16px;
+  margin-bottom: 15px;
   color: #000000;
 }
