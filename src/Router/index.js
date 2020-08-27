@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 const HomePage = lazy(() => import('../Containers/HomePage'));
 const Electronics = lazy(() => import('../Containers/Electronics'));
 const ShopPage = lazy(() => import('../Containers/ShopPage'));
-
 const AppRouter = () => {
   return (
     <div>

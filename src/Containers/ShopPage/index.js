@@ -1,9 +1,10 @@
 import React from 'react';
-import Collections from '../../Components/Categories';
+import Categories from '../../Components/Categories';
+import './index.css';
 const ShopPage = () => {
   return (
-    <div>
-      <Collections />
+    <div className='ShopPage'>
+      <Categories />
     </div>
   );
 };
