@@ -2,8 +2,8 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .HeadLine {
-  margin-left: 4.2rem;
+  margin-left: 0.7rem;
 }
