@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
+import Button from '../Button';
 class SignIn extends Component {
   constructor() {
     super();
@@ -68,9 +69,20 @@ class SignIn extends Component {
               required
             />
           </div>
-          <button className='btn' type='submit'>
-            Submit
-          </button>
+          <Button type='submit' value='Sign In' />
+          <h4>Don't have an account?</h4>
+
+          <Link to='/register'>
+            <Button
+              style={{
+                background: 'white',
+                color: 'black',
+                border: '1px solid black',
+                marginTop: '-1rem',
+              }}
+              value='Create acount'
+            />
+          </Link>
         </form>
       </div>
     );

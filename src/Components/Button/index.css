@@ -1,0 +1,23 @@
+.btn {
+  min-width: 270px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  margin-top: 2rem;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: #0065ff;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  border-radius: 1.4rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #408dff;
+  color: black;
+}
