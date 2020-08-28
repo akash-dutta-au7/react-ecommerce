@@ -11,7 +11,11 @@ const Header = () => {
           <Logo className='logo' />
         </Link>
         <div className='searchbar'>
-          <input type='text' placeholder='Search for products' />
+          <input
+            className='searchfield'
+            type='text'
+            placeholder='Search for products'
+          />
         </div>
         <div className='nav-menus'>
           <Link className='menu' to='/shop'>
