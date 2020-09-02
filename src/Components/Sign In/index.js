@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
+import { SignInWithGoogle } from '../../Firebase/firebase.utils';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import Button from '../Button';
 class SignIn extends Component {
@@ -70,6 +71,7 @@ class SignIn extends Component {
             />
           </div>
           <Button type='submit' value='Sign In' />
+          <Button onClick={SignInWithGoogle} value='Google' />
           <h4>Don't have an account?</h4>
 
           <Link to='/register'>
