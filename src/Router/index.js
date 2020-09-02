@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 //firebase-auth
-import { auth } from '../Firebase/firebase.utils';
+
 // All pages
 const HomePage = lazy(() => import('../Containers/HomePage'));
 //navbar menus
@@ -12,28 +12,6 @@ const Register = lazy(() => import('../Containers/Register'));
 const Electronics = lazy(() => import('../Containers/Electronics'));
 
 class AppRouter extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
-  unsubscribeFromAuth = null;
-
-  componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({
-        currentUser: user,
-      });
-      console.log(user);
-    });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
   render() {
     return (
       <div>

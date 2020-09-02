@@ -71,7 +71,16 @@ class SignIn extends Component {
             />
           </div>
           <Button type='submit' value='Sign In' />
-          <Button onClick={SignInWithGoogle} value='Google' />
+          <Button
+            onClick={SignInWithGoogle}
+            isGoogleSignIn={true}
+            value='Google'
+          />
+          {/*<Button
+            onClick={SignInWithGoogle}
+            isGoogleSignIn={true}
+            value='Google'
+        /> */}
           <h4>Don't have an account?</h4>
 
           <Link to='/register'>

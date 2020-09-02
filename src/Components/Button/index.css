@@ -21,3 +21,15 @@
   background-color: #408dff;
   color: black;
 }
+
+.google-sign-in {
+  background-color: #e8290b;
+  color: white;
+  /* min-width: 130px;
+  margin-right: 10px; */
+}
+
+.google-sign-in:hover {
+  background-color: #ff3e4d;
+  color: black;
+}

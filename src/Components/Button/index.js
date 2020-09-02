@@ -1,8 +1,11 @@
 import React from 'react';
 import './index.css';
-const Button = ({ value, ...otherProps }) => {
+const Button = ({ value, isGoogleSignIn, ...otherProps }) => {
   return (
-    <button className='btn' {...otherProps}>
+    <button
+      className={`${isGoogleSignIn ? 'google-sign-in' : ''} btn`}
+      {...otherProps}
+    >
       {value}
     </button>
   );
