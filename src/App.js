@@ -1,5 +1,5 @@
 import React, { Suspense, Component } from 'react';
-import { auth } from './Firebase/firebase.utils';
+import { auth, createUserDocs } from './Firebase/firebase.utils';
 import './App.css';
 import AppRouter from './Router';
 import Loader from './Components/Loader';
@@ -17,11 +17,8 @@ class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({
-        currentUser: user,
-      });
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+      createUserDocs(user)
     });
   }
 
