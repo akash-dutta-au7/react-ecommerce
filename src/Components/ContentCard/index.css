@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 10px;
+  border-radius: 1px;
   margin: 0 7.5px 15px;
   margin-bottom: 5rem;
   background-size: cover;
@@ -20,29 +20,22 @@
   transition: transform 3s cubic-bezier(0.25, 0.25, 0.45, 0.95);
 }
 .content-container {
-  height: 70px;
-  width: 70px;
-  padding: 0 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 4px 4px 10px #888888;
+  justify-content: center; 
 }
 
 .title {
+  margin-top: -4rem;
   font-weight: bold;
-  margin-bottom: 6px;
   font-size: 22px;
   color: #000000;
 }
 
-.subtitle {
+/* .subtitle {
   font-weight: lighter;
   font-size: 16px;
   margin-bottom: 15px;
   color: #000000;
-}
+} */

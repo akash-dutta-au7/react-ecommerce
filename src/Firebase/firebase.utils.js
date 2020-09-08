@@ -23,7 +23,7 @@ export const createUserDocs = async (userAuth, additionaldata) => {
     const createdAt = new Date();
 
     try {
-      await  userRef.set({
+      await userRef.set({
         displayName, email, createdAt, ...additionaldata
       })
     } catch (error) {

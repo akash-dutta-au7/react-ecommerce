@@ -1,0 +1,33 @@
+.signin-container {
+    display: grid;
+    justify-content: center;
+    position: relative;
+    margin-left: 3.5rem;
+  }
+  
+  .form-group {
+    position: relative;
+    width: 20rem;
+    min-height: 60vh;
+    max-height: 80vh;
+    padding: 4rem;
+    margin-bottom: 3rem;
+    border-radius: 0.6rem;
+  }
+  
+  
+  .heading {
+    margin-left: 4.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-container {
+    margin-left: 1.7rem;
+    margin-bottom: 2rem;
+  }
+  h4 {
+    margin-top: 2rem;
+    margin-left: 4rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
