@@ -45,6 +45,12 @@ class SignUp extends Component {
         password
       );
       await createUserDocs(user, { displayName });
+      Swal.fire({
+        title: "Signed Up",
+        text: "You've successfully Signed Up",
+        icon: "success",
+        showCancelButton: true,
+      });
       this.setState({
         displayName: "",
         email: "",

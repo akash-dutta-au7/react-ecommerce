@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.utils";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { FaShoppingCart } from "react-icons/fa";
+import ReactTooltip from "react-tooltip";
 import "./index.css";
 
 const Header = ({ currentUser }) => {
@@ -30,7 +31,12 @@ const Header = ({ currentUser }) => {
               className="menu"
               style={{ cursor: "pointer" }}
               onClick={() => auth.signOut()}
+              data-tip
+              data-for="sign-out"
             >
+              <ReactTooltip id="sign-out" type="error" effect="solid">
+               <span>CLICK TO SIGN OUT</span>
+              </ReactTooltip>
               Hello, there!
               <Redirect to="/" />
             </div>

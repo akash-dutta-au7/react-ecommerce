@@ -31,7 +31,12 @@ class SignIn extends Component {
         password: '',
     });
     } catch (error) {
-      console.log(error)
+      Swal.fire({
+        title: "Error logging in",
+        text: "Unable to log in to your acount",
+        icon: "error",
+        showCancelButton: true,
+      })
     }
   };
   handleEmailChange = (e) => {
