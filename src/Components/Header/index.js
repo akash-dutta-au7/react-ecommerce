@@ -1,48 +1,52 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { auth } from '../../Firebase/firebase.utils';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-import './index.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { auth } from "../../Firebase/firebase.utils";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { FaShoppingCart } from "react-icons/fa";
+import "./index.css";
 
 const Header = ({ currentUser }) => {
   return (
     <div>
-      <div className='header'>
-        <Link className='logo-container' to='/'>
-          <Logo className='logo' />
+      <div className="header">
+        <Link className="logo-container" to="/">
+          <Logo className="logo" />
         </Link>
-        <div className='searchbar'>
+        <div className="searchbar">
           <input
-            className='searchfield'
-            type='text'
-            placeholder='Search for products'
+            className="searchfield"
+            type="text"
+            placeholder="Search for products"
           />
         </div>
-        <div className='nav-menus'>
-          <Link className='menu' to='/shop'>
-            SHOP
-          </Link>
-
-          <Link className='menu' to='/register'>
-            REGISTER
+        <div className="nav-menus">
+          <Link className="menu" to="/shop">
+            Shop
           </Link>
 
           {currentUser ? (
             <div
-              className='menu'
-              style={{ cursor: 'pointer' }}
+              className="menu"
+              style={{ cursor: "pointer" }}
               onClick={() => auth.signOut()}
             >
-              SIGN OUT
+              Hello, there!
+              <Redirect to="/" />
             </div>
           ) : (
-            <Link className='menu' to='/signin'>
-              SIGN IN
-            </Link>
+            <div>
+              <Link className="menu" to="/register">
+                Register
+              </Link>
+              <Link className="menu" to="/signin">
+                Sign In
+              </Link>
+            </div>
           )}
 
-          <Link className='menu' to='/cart'>
-            CART
+          <Link className="menu" to="/cart">
+            <FaShoppingCart />
           </Link>
         </div>
       </div>

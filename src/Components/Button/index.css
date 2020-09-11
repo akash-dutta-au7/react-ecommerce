@@ -34,3 +34,16 @@
   background-color: #ff3e4d;
   color: black;
 }
+
+/* CREATE ACCOUNT */
+.create-acount{
+  background: white;
+  color: black;
+  border: 1px solid black;
+  margin-top: -1rem;
+}
+
+.create-acount:hover {
+  background-color: black;
+  color: white;
+}

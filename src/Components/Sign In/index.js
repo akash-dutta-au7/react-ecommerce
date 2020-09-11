@@ -95,12 +95,13 @@ class SignIn extends Component {
 
           <Link to='/register'>
             <Button
-              style={{
-                background: 'white',
-                color: 'black',
-                border: '1px solid black',
-                marginTop: '-1rem',
-              }}
+              // style={{
+              //   background: 'white',
+              //   color: 'black',
+              //   border: '1px solid black',
+              //   marginTop: '-1rem',
+              // }}
+              isCreateAcount={true}
               value='Create acount'
             />
           </Link>
