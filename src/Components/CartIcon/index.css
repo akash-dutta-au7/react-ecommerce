@@ -1,0 +1,25 @@
+.cart-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  cursor: pointer;
+  color: white;
+}
+.item-count {
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  bottom: 12px;
+  color: white;
+  margin-bottom: 16px;
+  margin-left: 30px;
+}
+.shopping-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}

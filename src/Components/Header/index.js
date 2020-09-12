@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.utils";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { FaShoppingCart } from "react-icons/fa";
-import {connect} from 'react-redux'
+import Cart from "../Cart";
+import { connect } from "react-redux";
 import ReactTooltip from "react-tooltip";
+import CartIcon from "../CartIcon";
 import "./index.css";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
+  // const cartHandler = () => {
+  //   if (currentUser) <Redirect to="/cart" />;
+  //   else <Redirect to="/signin" />;
+  // };
   return (
     <div>
       <div className="header">
@@ -22,6 +27,7 @@ const Header = ({ currentUser }) => {
             placeholder="Search for products"
           />
         </div>
+
         <div className="nav-menus">
           <Link className="menu" to="/shop">
             Shop
@@ -36,7 +42,7 @@ const Header = ({ currentUser }) => {
               data-for="sign-out"
             >
               <ReactTooltip id="sign-out" type="error" effect="solid">
-               <span>CLICK TO SIGN OUT</span>
+                <span>CLICK TO SIGN OUT</span>
               </ReactTooltip>
               Hello, there!
               <Redirect to="/" />
@@ -52,10 +58,15 @@ const Header = ({ currentUser }) => {
             </div>
           )}
 
-          <Link className="menu" to="/cart">
-            <FaShoppingCart />
-          </Link>
+          {/*<Link
+            onClick={() => {
+              currentUser ? <Redirect to="/cart" /> : <Redirect to="/signin" />;
+            }}
+            to="/cart"
+          ></Link>*/}
+          <CartIcon />
         </div>
+        { !hidden ? <Cart /> : null}
       </div>
     </div>
   );
@@ -63,6 +74,7 @@ const Header = ({ currentUser }) => {
 
 const mapStateToProps = (state) => ({
   //here 'userReducer' in the userReducer function in user.reducer.js
-  currentUser: state.userReducer.currentUser
-})
+  currentUser: state.userReducer.currentUser,
+  hidden: state.cartReducer.hidden,
+});
 export default connect(mapStateToProps, null)(Header);
