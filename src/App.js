@@ -1,36 +1,31 @@
-import React, { Suspense, Component } from 'react';
-import { auth, createUserDocs } from './Firebase/firebase.utils';
-import './App.css';
-import AppRouter from './Router';
-import Loader from './Components/Loader';
-import Header from './Components/Header';
+import React, { Suspense, Component } from "react";
+import { setCurrentUser } from "./Redux/Actions/";
+import { connect } from "react-redux";
+import { auth, createUserDocs } from "./Firebase/firebase.utils";
+import "./App.css";
+import AppRouter from "./Router";
+import Loader from "./Components/Loader";
+import Header from "./Components/Header";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if(userAuth){
+      if (userAuth) {
         const userRef = await createUserDocs(userAuth);
-        userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser : {
-              id: snapShot.id,
-              ...snapShot.data()
-            }
-          })
-          console.log(this.state)
-        })
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+
+          console.log(this.state);
+        });
       }
-      this.setState({currentUser: userAuth})
+      setCurrentUser(userAuth);
     });
   }
 
@@ -39,9 +34,9 @@ class App extends Component {
   }
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Suspense fallback={<Loader />}>
-          <Header currentUser={this.state.currentUser} />
+          <Header />
           <AppRouter />
         </Suspense>
       </div>
@@ -49,4 +44,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  //here 'user' in setCurrentUser(user) is actually the payload we passed in setCurrentUser action function in action
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+export default connect(null, mapDispatchToProps)(App);

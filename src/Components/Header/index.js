@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.utils";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { FaShoppingCart } from "react-icons/fa";
+import {connect} from 'react-redux'
 import ReactTooltip from "react-tooltip";
 import "./index.css";
 
@@ -60,4 +61,8 @@ const Header = ({ currentUser }) => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  //here 'userReducer' in the userReducer function in user.reducer.js
+  currentUser: state.userReducer.currentUser
+})
+export default connect(mapStateToProps, null)(Header);
