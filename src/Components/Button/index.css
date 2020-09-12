@@ -10,11 +10,13 @@
   background-color: #0065ff;
   color: white;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
+  font-family: "Open Sans Condensed";
   font-weight: bolder;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 .btn:hover {
@@ -36,7 +38,7 @@
 }
 
 /* CREATE ACCOUNT */
-.create-acount{
+.create-acount {
   background: white;
   color: black;
   border: 1px solid black;
@@ -46,4 +48,32 @@
 .create-acount:hover {
   background-color: black;
   color: white;
+}
+
+/* CART BUTTON */
+.cart-button {
+  background: black;
+  color: white;
+  margin-top: auto;
+  margin-left: -0.9rem;
+}
+
+.cart-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+/* ADD TO CART */
+
+.add-to-cart {
+  background-color: white;
+  color: black;
+  border-radius: 0;
+}
+
+.add-to-cart:hover {
+  background: black;
+  color: white;
+  border: 1px solid black;
 }

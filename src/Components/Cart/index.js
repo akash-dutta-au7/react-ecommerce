@@ -6,7 +6,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-item"> </div>
-      <Button value="CHECKOUT" />
+      <Button value="CHECKOUT" isCartButton/>
     </div>
   );
 };

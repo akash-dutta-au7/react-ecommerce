@@ -17,7 +17,7 @@
   flex-direction: column;
   overflow: scroll;
 }
-Button {
+/* Button {
   margin-top: 19rem !important;
   margin-left: -0.9rem !important;
   background-color: black !important;
@@ -28,4 +28,4 @@ Button:hover {
   color: black !important;
   background-color: white !important;
   border: 1px solid black !important;
-}
+} */
