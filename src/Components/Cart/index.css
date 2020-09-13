@@ -3,6 +3,7 @@
   width: 240px;
   height: 340px;
   display: flex;
+  /* justify-content: center; */
   flex-direction: column;
   padding: 20px;
   border: 1px solid black;
@@ -17,15 +18,3 @@
   flex-direction: column;
   overflow: scroll;
 }
-/* Button {
-  margin-top: 19rem !important;
-  margin-left: -0.9rem !important;
-  background-color: black !important;
-  color: white !important;
-}
-
-Button:hover {
-  color: black !important;
-  background-color: white !important;
-  border: 1px solid black !important;
-} */

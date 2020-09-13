@@ -36,11 +36,11 @@
   width: 10%;
 }
 
-Button {
-  width: 50%;
+/* Button {
+  width: 80%;
   opacity: 0.7;
   position: absolute;
   top: 220px;
-  /* display: none !important; */
-}
+ 
+} */
 
